@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block.title %}{{bean.title}}{% endblock %}
+{% block content %}
+<article>
+    <h2>
+        {{bean.detail}}
+    </h2>
+    {{bean.description}}
+    <section>
+        {% for step in bean.step_set.all}
+        <h3>
+            {{step.tilte}}
+        </h3>
+        {{step.description}}
+    </section>
+</article>
+{% endfor %}
