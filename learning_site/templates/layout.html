@@ -7,6 +7,10 @@
     </head>
     <body>
         <div class="site-container">
+            <nav>
+                <a href="{% url 'hello' %}">Home</a>
+                <a href = "{% url 'list' %}">Courses</a>
+            </nav>
         {% block content %}{% endblock %}
         </div>
     </body>
