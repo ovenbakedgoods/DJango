@@ -1,4 +1,4 @@
-"""learning_site URL Configuration
+"""restaurant URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -15,16 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import url
 from django.conf.urls import url, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 from . import views
 
 
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    url(r'^$',views.hello_world, name = 'hello'),
-    url(r'^courses/', include('courses.urls'), name = 'courses'),
+    url(r'^menu_items/', include('menu_items.urls')),
+    url('admin/', admin.site.urls),
+    url(r'^$', views.greeting),
+
+
+    
 ]
 
 urlpatterns += staticfiles_urlpatterns()
