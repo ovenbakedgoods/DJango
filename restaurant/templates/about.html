@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %} GJ About Page {% endblock %}
+
+{% block content %}
+<h1 style="color:rgb(76, 0, 255)"><b>Everybody has a story to tell, Here's Ours!</b></h1>
+
+<h5>{{my_text}}, {{my_number}}, {{my_list}}</h5>
+{{ my_html|safe }}
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+</ul>
+<ul>
+    {% for my_sub_item in my_list %}
+        {% if my_boolean %}
+            {% if my_sub_item != 4 %}
+                <li>{{ forloop.counter }} - {{ my_sub_item|capfirst}}</li>
+            {% else %}
+                <li>{{forloop.counter }} - {{my_sub_item}}</li>
+            {% endif %}
+        {% endif %}
+    
+    {% endfor %}    
+</ul>
+
+
+
+{% endblock %}

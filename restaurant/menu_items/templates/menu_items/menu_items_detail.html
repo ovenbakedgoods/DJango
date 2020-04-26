@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title %}{{order.entree}}{% endblock %}
+{% block content %}
+<article>
+    <h2>
+        {{order.description}}
+    </h2>
+    {{order.entree}}
+    <section>
+        {% for step in menu.step_set.all %}
+        <h3>{{step.Nutritioninfo}}</h3>
+        {{step.Price}}
+        {% endfor %}
+    </section>
+</article>
+{% endblock %}

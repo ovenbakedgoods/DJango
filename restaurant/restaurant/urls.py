@@ -21,14 +21,15 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from . import views
 
 
-
 urlpatterns = [
-    url(r'^menu_items/', include('menu_items.urls')),
-    url('admin/', admin.site.urls),
-    url(r'^$', views.greeting),
-
-
     
-]
+    url('home/',views.greeting_view, name = 'home'),
+    url('contact/', views.contact_view, name='contact'),
+    url('about/', views.about_view, name='about'),
+    url('social/', views.social_view, name='socialmedia'),
+    url('admin/', admin.site.urls),
+    url(r'^$', views.greeting_view),
+    url(r'^menu_items/', include('menu_items.urls')),
+    ]
 
 urlpatterns += staticfiles_urlpatterns()

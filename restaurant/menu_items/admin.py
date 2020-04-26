@@ -7,6 +7,5 @@ class StepInline(admin.StackedInline):
 class MenuAdmin(admin.ModelAdmin):
     inlines = [StepInline,]
 
-
 admin.site.register(Menu, MenuAdmin)
 admin.site.register(Step)
